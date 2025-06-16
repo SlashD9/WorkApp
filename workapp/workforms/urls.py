@@ -17,6 +17,7 @@ urlpatterns = [
     path('service/', service, name='Service Sheet'),
     path('stock/', stock, name='Stock Sheet'),
     path('stock/add_stock/', views.add_stock, name="add_stock"),
+    path('sites/add_site/', views.add_site, name="add_site"),
     
 ]
 

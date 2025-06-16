@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .forms import StockForm
+from .forms import SiteForm, StockForm
 
 # Create your views here.
 def home(request):
@@ -19,6 +19,17 @@ def service(request):
 
 def stock(request):
     return render(request, 'stock.html')
+
+def add_site(request):
+    if request.method =="POST":
+        form = SiteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/sites')
+    else:
+        form = SiteForm()
+        return render(request, "add_site.html",{'form': form})
+    
 
 def add_stock(request):
     if request.method =="POST":
