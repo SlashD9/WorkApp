@@ -1,4 +1,5 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
+from .forms import StockForm
 
 # Create your views here.
 def home(request):
@@ -18,3 +19,13 @@ def service(request):
 
 def stock(request):
     return render(request, 'stock.html')
+
+def add_stock(request):
+    if request.method =="POST":
+        form = StockForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/stock')
+    else:
+        form = StockForm()
+        return render(request, "add_stock.html",{'form': form})
