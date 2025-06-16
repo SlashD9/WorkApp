@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, worksheet, service_sheet, customer_site
+from .views import home, sites, worksheet, service, customer, stock
 from django.contrib import admin
 
 admin.site.site_header = 'Worksheets'                    # default: "Django Administration"
@@ -8,9 +8,11 @@ admin.site.site_title = 'Worksheets' # default: "Django site admin"
 
 urlpatterns = [
     path('', home, name='home'),
-    path('sites/', customer_site, name='Customer Sites'),
+    path('sites/', sites, name='Sites'),
+    path('customer/', customer, name='Customer'),
     path('worksheet/', worksheet, name='Worksheet'),
-    path('service/', service_sheet, name='Service Sheet'),
+    path('service/', service, name='Service Sheet'),
+    path('stock/', stock, name='Stock Sheet'),
     
 ]
 

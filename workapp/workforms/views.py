@@ -1,14 +1,20 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import render, HttpResponse
 
 # Create your views here.
 def home(request):
     return HttpResponse("<h1>Hello, from workforms</h1>")
 
-def customer_site(request):
-    return HttpResponse("<h1>Customer Site</h1>")
+def sites(request):
+    return render(request, 'sites.html')
+
+def customer(request):
+    return render(request, 'customer.html')
 
 def worksheet(request):
-    return HttpResponse("<h1>Worksheet</h1>")
+    return render(request, 'worksheet.html')
 
-def service_sheet(request):
-    return HttpResponse("<h1>Service Sheet</h1>")
+def service(request):
+    return render(request, 'service.html')
+
+def stock(request):
+    return render(request, 'stock.html')
