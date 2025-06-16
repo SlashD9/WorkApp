@@ -16,7 +16,7 @@ class Choices(models.Model):
 
     INSTALLATION = [
         ("Swing Door", "Swing Door"),
-        ("Slide Door", "SLide Door"),
+        ("Slide Door", "Slide Door"),
         ("Fold Door", "Fold Door"),
     ]
 

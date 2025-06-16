@@ -28,7 +28,7 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display_links =["site_name", "date", "status"]
 
 class StockAdmin(admin.ModelAdmin):
-    list_display = ["location", "qty", "item", "description"]
+    list_display = ["location", "qty", "item", "description", "cost_price", "sale_price"]
     list_display_links = ["qty", "item"]
 
 

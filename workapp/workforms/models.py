@@ -90,4 +90,6 @@ class Stock(models.Model):
     item = models.CharField(max_length=50)
     description = models.TextField()
     location = models.CharField(max_length=50, choices=Choices.stock_location)
+    cost_price = models.IntegerField(default=0)
+    sale_price = models.IntegerField(default=0)
 
