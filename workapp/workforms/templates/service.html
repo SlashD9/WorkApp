@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1>Service Page</h1>
+<div class="text-center" style="margin: 20px;">
+  <h1>Service</h1>
   <a class="btn btn-primary" href="/service/add_service" role="button">Add Service</a>
   <br>
   <br>
-  {% for x in services %}
-      <div class="container-fluid">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <div class="card border-secondary mb-3" style="max-width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">{{ x.site_name }}</h5>
+</div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for x in services %}
+      <div class="card border-dark mb-3" style="max-width: 18rem; margin: 10px;">
+        <div class="card-body">
+          <h5 class="card-title">{{ x.site_name }}</h5>
               <p class="card-text">{{ x.date }}</p>
               <p class="card-text">{{ x.location }}</p>
               <p class="card-text">{{ x.door_Code }}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     {% endfor %}
+  </div>
 {% endblock %}
 

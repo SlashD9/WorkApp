@@ -10,7 +10,7 @@ admin.site.site_title = 'Worksheets' # default: "Django site admin"
 app_name = 'posts'
 
 urlpatterns = [
-    path('', home, name='home'),
+    path('', sites, name='Sites'),
     path('sites/', sites, name='Sites'),
     path('customer/', customer, name='Customer'),
     path('worksheet/', worksheet, name='Worksheet'),
