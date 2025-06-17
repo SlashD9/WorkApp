@@ -29,6 +29,36 @@ def add_site(request):
     else:
         form = SiteForm()
         return render(request, "add_site.html",{'form': form})
+
+def add_customer(request):
+    if request.method =="POST":
+        form = CustomerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/customer')
+    else:
+        form = CustomerForm()
+        return render(request, "add_customer.html",{'form': form})
+
+def add_worksheet(request):
+    if request.method =="POST":
+        form = WorksheetForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/worksheet')
+    else:
+        form = WorksheetForm()
+        return render(request, "add_worksheet.html",{'form': form})
+
+def add_service(request):
+    if request.method =="POST":
+        form = ServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/service')
+    else:
+        form = ServiceForm()
+        return render(request, "add_service.html",{'form': form})
     
 
 def add_stock(request):
