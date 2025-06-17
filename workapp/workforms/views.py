@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from .forms import SiteForm, StockForm
+from .forms import SiteForm, StockForm, CustomerForm, WorksheetForm, ServiceForm
 
 # Create your views here.
 def home(request):
