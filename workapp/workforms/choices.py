@@ -26,7 +26,7 @@ class Choices(models.Model):
         ("Requires Attention", "Requires Attention"),
         ("Replaced", "Replaced"),
         ("Repaired", "Repaired"),
-        ("N/A", "N/A)"),
+        ("N/A", "N/A"),
     ]
 
     SELECTOR = [

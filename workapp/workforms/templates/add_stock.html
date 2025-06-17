@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit" class="btn btn-success">Save Stock</button>
-  </form>
+<h2>Add Stock</h2>
+  {% load django_bootstrap5 %}
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% bootstrap_button button_type="submit" content="Submit" %}
+    </form>
 {% endblock %}
 
 
