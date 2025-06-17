@@ -1,6 +1,10 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Add Site</button>
+{% extends 'base.html' %}
 
-</form>
+{% block content %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="btn btn-success">Save Service</button>
+  </form>
+{% endblock %}
+
