@@ -40,7 +40,9 @@ class Worksheet(models.Model):
     customer_name = models.CharField(max_length=50)
     customer_signature = models.CharField(max_length=50)
     status = models.CharField(max_length=50, choices=Choices.STATUS, default="Created")
+#required addition; capture signatures as images 
     signature = models.ImageField(blank=True)
+#required addition; upload images and name with site + date + number++
     image2 = models.ImageField(blank=True)
     image3 = models.ImageField(blank=True)
     image4 = models.ImageField(blank=True)
@@ -76,6 +78,7 @@ class Service(models.Model):
     hours = models.IntegerField()
     cycles = models.IntegerField()
     notes = models.TextField(blank=True)
+#required addition; upload images and name with site + date + number++
     image1 = models.ImageField()
     image2 = models.ImageField(blank=True)
     image3 = models.ImageField(blank=True)
