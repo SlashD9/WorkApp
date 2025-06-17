@@ -3,5 +3,24 @@
 {% block content %}
   <h1>Stock Page</h1>
   <a class="btn btn-primary" href="/stock/add_stock/" role="button">Add Stock</a>
+
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Location</th>
+      <th scope="col">Item</th>
+      <th scope="col">Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in stocks %}
+    <tr>
+      <td>{{ x.location }}</td>
+      <td>{{ x.item }}</td>
+      <td>{{ x.qty }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
 

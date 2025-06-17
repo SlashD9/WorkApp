@@ -7,21 +7,24 @@ def home(request):
     return HttpResponse("<h1>Hello, from workforms</h1>")
 
 def sites(request):
-    return render(request, 'sites.html')
+    sites = Site.objects.all()
+    return render(request, 'sites.html', {'sites': sites})
 
 def customer(request):
     customers = Customer.objects.all()
     return render(request, 'customer.html', {'customers': customers})
 
 def worksheet(request):
-    return render(request, 'worksheet.html')
+    worksheets = Worksheet.objects.all()
+    return render(request, 'worksheet.html', {'worksheets': worksheets})
 
 def service(request):
     services = Service.objects.all()
     return render(request, 'service.html', {'services': services})
 
 def stock(request):
-    return render(request, 'stock.html')
+    stocks = Stock.objects.all()
+    return render(request, 'stock.html', {'stocks': stocks})
 
 def add_site(request):
     if request.method =="POST":

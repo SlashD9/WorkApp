@@ -3,5 +3,24 @@
 {% block content %}
   <h1>Sites Page</h1>
   <a class="btn btn-primary" href="/sites/add_site" role="button">Add Site</a>
+  <br>
+  <br>
+  <div class="row">
+      <div class="container-fluid">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          
+    {% for x in sites %}
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ x.site_name }}</h5>
+              <p class="card-text">{{ x.address }}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    {% endfor %}
+          
+        </div>
+      </div>
+    </div>
 {% endblock %}
 
