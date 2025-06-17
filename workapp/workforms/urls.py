@@ -16,8 +16,12 @@ urlpatterns = [
     path('worksheet/', worksheet, name='Worksheet'),
     path('service/', service, name='Service Sheet'),
     path('stock/', stock, name='Stock Sheet'),
-    path('stock/add_stock/', views.add_stock, name="add_stock"),
     path('sites/add_site/', views.add_site, name="add_site"),
+    path('customer/add_customer/', views.add_customer, name="add_customer"),
+    path('worksheet/add_worksheet/', views.add_worksheet, name="add_worksheet"),
+    path('service/add_service/', views.add_service, name="add_service"),
+    path('stock/add_stock/', views.add_stock, name="add_stock"),
+    
     
 ]
 
