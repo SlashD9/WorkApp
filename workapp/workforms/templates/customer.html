@@ -3,5 +3,23 @@
 {% block content %}
   <h1>Customer Page</h1>
   <a class="btn btn-primary" href="/customer/add_customer/" role="button">Add Customer</a>
+  <br>
+  <br>
+    {% for x in customers %}
+      <div class="container-fluid">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card border-secondary mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ x.site_name }}</h5>
+              <p class="card-text">{{ x.customer_name }}</p>
+              <p class="card-text">{{ x.customer_phone }}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  
+
 {% endblock %}
 

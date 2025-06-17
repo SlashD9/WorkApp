@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
+from .models import Site, Customer, Worksheet, Service, Stock
 from .forms import SiteForm, StockForm, CustomerForm, WorksheetForm, ServiceForm
 
 # Create your views here.
@@ -9,13 +10,15 @@ def sites(request):
     return render(request, 'sites.html')
 
 def customer(request):
-    return render(request, 'customer.html')
+    customers = Customer.objects.all()
+    return render(request, 'customer.html', {'customers': customers})
 
 def worksheet(request):
     return render(request, 'worksheet.html')
 
 def service(request):
-    return render(request, 'service.html')
+    services = Service.objects.all()
+    return render(request, 'service.html', {'services': services})
 
 def stock(request):
     return render(request, 'stock.html')
