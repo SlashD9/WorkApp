@@ -28,7 +28,7 @@ def edit_site(request, id):
         form = SiteForm(request.POST, instance=site)
         if form.is_valid():
             form.save()
-            return redirect('sites', site.id)
+            return redirect('/sites', site.id)
     else:
         form = SiteForm(instance=site)
     return render(request, 'edit_site.html', {'form': form})
@@ -56,7 +56,7 @@ def edit_customer(request, id):
         form = CustomerForm(request.POST, instance=customer)
         if form.is_valid():
             form.save()
-            return redirect('customer', customer.id)
+            return redirect('/customer', customer.id)
     else:
         form = CustomerForm(instance=customer)
     return render(request, 'edit_customer.html', {'form': form})
@@ -85,7 +85,7 @@ def edit_worksheet(request, id):
         form = WorksheetForm(request.POST, instance=worksheet)
         if form.is_valid():
             form.save()
-            return redirect('worksheet', worksheet.id)
+            return redirect('/worksheet', worksheet.id)
     else:
         form = WorksheetForm(instance=worksheet)
     return render(request, 'edit_worksheet.html', {'form': form})
@@ -114,7 +114,7 @@ def edit_service(request, id):
         form = ServiceForm(request.POST, instance=service)
         if form.is_valid():
             form.save()
-            return redirect('service', service.id)
+            return redirect('/service', service.id)
     else:
         form = ServiceForm(instance=service)
     return render(request, 'edit_service.html', {'form': form})
@@ -142,7 +142,7 @@ def edit_stock(request, id):
         form = StockForm(request.POST, instance=stock)
         if form.is_valid():
             form.save()
-            return redirect('stock', stock.id)
+            return redirect('/stock', stock.id)
     else:
         form = StockForm(instance=stock)
     return render(request, 'edit_stock.html', {'form': form})
