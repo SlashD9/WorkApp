@@ -3,6 +3,7 @@
 {% block content %}
 <div class="text-center" style="margin: 20px;">
   <h1 >Sites</h1>
+  <br>
   <a class="btn btn-primary" href="/sites/add_site" role="button">Add Site</a>
   <br>
   <br>
@@ -14,7 +15,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ x.site_name }}</h5>
           <p class="card-text">{{ x.address }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a class="btn btn-primary" href="/sites/edit_site/{{ x.id }}" role="button">Edit</a>
         </div>
       </div>
     {% endfor %}

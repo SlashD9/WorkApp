@@ -3,6 +3,7 @@
 {% block content %}
 <div class="text-center" style="margin: 20px;">
   <h1>Service</h1>
+  <br>
   <a class="btn btn-primary" href="/service/add_service" role="button">Add Service</a>
   <br>
   <br>
@@ -16,7 +17,7 @@
               <p class="card-text">{{ x.date }}</p>
               <p class="card-text">{{ x.location }}</p>
               <p class="card-text">{{ x.door_Code }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a class="btn btn-primary" href="/service/edit_service/{{ x.id }}" role="button">Edit</a>
         </div>
       </div>
     {% endfor %}

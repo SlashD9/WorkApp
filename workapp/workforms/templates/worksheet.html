@@ -3,6 +3,7 @@
 {% block content %}
 <div class="text-center" style="margin: 20px;">
   <h1>Worksheets</h1>
+  <br>
   <a class="btn btn-primary" href="/worksheet/add_worksheet/" role="button">Add Worksheet</a>
   <br>
   <br>
@@ -16,7 +17,7 @@
               <p class="card-text">{{ x.date }}</p>
               <p class="card-text">{{ x.job_type }}</p>
               <p class="card-text">{{ x.description }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a class="btn btn-primary" href="/worksheet/edit_worksheet/{{ x.id }}" role="button">Edit</a>
         </div>
       </div>
     {% endfor %}
