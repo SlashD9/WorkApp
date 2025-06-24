@@ -9,19 +9,30 @@
   <br>
 </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Date</th>
+      <th scope="col">Site</th>
+      <th scope="col">Job type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
     {% for x in worksheets %}
-      <div class="card border-dark mb-3" style="max-width: 18rem; margin: 10px;">
-        <div class="card-body">
-          <h5 class="card-title">{{ x.site_name }}</h5>
-              <p class="card-text">{{ x.date }}</p>
-              <p class="card-text">{{ x.job_type }}</p>
-              <p class="card-text">{{ x.description }}</p>
-              <p class="card-footer">{{ x.status }}</p>
-          <a class="btn btn-primary" href="/worksheet/edit_worksheet/{{ x.id }}" role="button">Edit</a>
-        </div>
-      </div>
+    <tr>
+      <td>{{ x.id }}</td>
+      <td>{{ x.date }}</td>
+      <td>{{ x.site_name  }}</td>
+      <td>{{ x.job_type }}</td>
+      <td>{{ x.description }}</td>
+      <td>{{ x.status }}</td>
+      <td><a class="btn btn-primary" href="/stock/edit_stock/{{ x.id }}" role="button">Edit</a></td>
+    </tr>
     {% endfor %}
-  </div>
+  </tbody>
+</table>
 {% endblock %}
-
