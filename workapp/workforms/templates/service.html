@@ -30,7 +30,10 @@
       <td>{{ x.job_type }}</td>
       <td>{{ x.description }}</td>
       <td>{{ x.status }}</td>
-      <td><a class="btn btn-primary" href="/stock/edit_stock/{{ x.id }}" role="button">Edit</a></td>
+      <td>
+        <a class="btn btn-primary" href="/service/edit_service/{{ x.id }}" role="button">Edit</a>
+        <a class="btn btn-danger" href="/service/delete_service/{{ x.id }}" role="button" onclick="return confirm('Are you sure you want to delete this Service Sheet?');">Delete</button>
+      </td>
     </tr>
     {% endfor %}
   </tbody>

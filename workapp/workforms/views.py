@@ -18,9 +18,14 @@ def add_site(request):
         if form.is_valid():
             form.save()
             return redirect('/sites')
+    elif "delete" in request.POST:
+        pk = request.Post.get("delete")
+        site = Site.objects.get(id=pk)
+        site.delete
     else:
         form = SiteForm()
         return render(request, "add_site.html",{'form': form})
+    
     
 def edit_site(request, id):
     site = Site.objects.get(id=id)
@@ -32,6 +37,12 @@ def edit_site(request, id):
     else:
         form = SiteForm(instance=site)
     return render(request, 'edit_site.html', {'form': form})
+
+def delete_site(request, id):
+    site = Site.objects.get(id=id)
+    site.delete()
+    return redirect("/site/")
+
 
 
                 # Customer Views #
@@ -61,6 +72,11 @@ def edit_customer(request, id):
         form = CustomerForm(instance=customer)
     return render(request, 'edit_customer.html', {'form': form})
 
+def delete_customer(request, id):
+    customer = Customer.objects.get(id=id)
+    customer.delete()
+    return redirect('/customer')
+
 
 
                 # Worksheet Views #
@@ -89,6 +105,11 @@ def edit_worksheet(request, id):
     else:
         form = WorksheetForm(instance=worksheet)
     return render(request, 'edit_worksheet.html', {'form': form})
+
+def delete_worksheet(request, id):
+    worksheet = Worksheet.objects.get(id=id)
+    worksheet.delete()
+    return redirect('/worksheet')
     
 
 
@@ -119,6 +140,11 @@ def edit_service(request, id):
         form = ServiceForm(instance=service)
     return render(request, 'edit_service.html', {'form': form})
 
+def delete_service(request, id):
+    service = Service.objects.get(id=id)
+    service.delete()
+    return redirect('/service')
+
 
                 # Stock Views #
                 ###############
@@ -146,3 +172,8 @@ def edit_stock(request, id):
     else:
         form = StockForm(instance=stock)
     return render(request, 'edit_stock.html', {'form': form})
+
+def delete_stock(request, id):
+    stock = Stock.objects.get(id=id)
+    stock.delete()
+    return redirect('/stock')

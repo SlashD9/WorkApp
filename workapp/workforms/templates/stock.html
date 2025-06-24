@@ -22,7 +22,10 @@
       <td>{{ x.location }}</td>
       <td>{{ x.item }}</td>
       <td>{{ x.qty }}</td>
-      <td><a class="btn btn-primary" href="/stock/edit_stock/{{ x.id }}" role="button">Edit</a></td>
+      <td>
+        <a class="btn btn-primary" href="/stock/edit_stock/{{ x.id }}" role="button">Edit</a>
+        <a class="btn btn-danger" href="/stock/delete_stock/{{ x.id }}" role="button" onclick="return confirm('Are you sure you want to delete this Stock Item?');">Delete</button>
+      </td>
     </tr>
     {% endfor %}
   </tbody>
