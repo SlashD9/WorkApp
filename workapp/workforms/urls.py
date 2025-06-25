@@ -1,15 +1,19 @@
 from django.urls import path
 from .views import home, sites, worksheet, service, customer, stock
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 from . import views
 
 admin.site.site_header = 'Worksheets'                    # default: "Django Administration"
 admin.site.index_title = 'Selection Area'                 # default: "Site administration"
 admin.site.site_title = 'Worksheets' # default: "Django site admin"
 
-app_name = 'posts'
+app_name = 'accounts'
+
 
 urlpatterns = [
+    path("accounts/login/", auth_views.LoginView.as_view(template_name="login.html"),name="login"),
+    path("accounts/logout/", auth_views.LogoutView.as_view(template_name="logout.html"), name="logout"),
     path('', sites, name='Sites'),
     
     path('sites/', sites, name='Sites'),

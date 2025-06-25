@@ -8,13 +8,15 @@
   </head>
   <body>
     <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand" href="/sites/">Worksheets</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-xl-0 mx-auto align-items-center">
+          <ul class="navbar-nav mb-2 mb-xl-0 mx-auto ">
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="/sites/">Sites</a>
             </li>
@@ -30,9 +32,19 @@
             <li class="nav-item">
               <a class="nav-link" href="/stock/">Stock</a>
             </li>
+            <li class="nav-item" style="padding-inline-start: 30rem;">
+            </li>
+            <li class="navbar-right">
+              <form method="post" action="{% url 'accounts:logout' %}">
+                {% csrf_token %}
+                <button class="nav-link " type="submit">Logout</button>
+              </form>
+            </li>
+            {% endif %}
         
           </ul>
         </div>
+        
       </div>
     </nav>
 
