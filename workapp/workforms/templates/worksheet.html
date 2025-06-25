@@ -16,7 +16,6 @@
       <th scope="col">Date</th>
       <th scope="col">Site</th>
       <th scope="col">Job type</th>
-      <th scope="col">Description</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -28,14 +27,14 @@
       <td>{{ x.date }}</td>
       <td>{{ x.site_name  }}</td>
       <td>{{ x.job_type }}</td>
-      <td>{{ x.description }}</td>
       <td>{{ x.status }}</td>
       <td>
         <a class="btn btn-primary" href="/worksheet/edit_worksheet/{{ x.id }}" role="button">Edit</a>
-        <a class="btn btn-danger" href="/customer/delete_worksheet/{{ x.id }}" role="button" onclick="return confirm('Are you sure you want to delete this Worksheet?');">Delete</button>
+        <a class="btn btn-danger" href="/worksheet/delete_worksheet/{{ x.id }}" role="button" onclick="return confirm('Are you sure you want to delete this Worksheet?');">Delete</button>
       </td>
     </tr>
     {% endfor %}
   </tbody>
 </table>
+
 {% endblock %}
